@@ -74,7 +74,8 @@ $(function() {
         $("#player-input").val('');
         var output = game.playersGuessSubmission(guess);
         if (output == 'You have already guessed that number.') {
-            $('#title').text("You've guessed that. Guess again!")
+            $('#title').text("You've guessed that. Guess again!");
+            comparisonSubtitles();
         } else {
             $('#guesses').find('li').last().remove();
             $('#guesses').find('ul').prepend('<li class="guess">' + guess + '</li>')
@@ -83,12 +84,16 @@ $(function() {
                 $('#subtitle').text("Press reset to play again!");
                 $('#submit, #hint').prop('disabled', true);
             } else {
-                if (game.isLower()) {
-                    $('#subtitle').text('Too low. Guess higher!');
-                } else {
-                    $('#subtitle').text('Too high. Guess lower!');
-                }
+                comparisonSubtitles();
             }
+        }
+    }
+
+    function comparisonSubtitles() {
+        if (game.isLower()) {
+            $('#subtitle').text('Too low. Guess higher!');
+        } else {
+            $('#subtitle').text('Too high. Guess lower!');
         }
     }
 
