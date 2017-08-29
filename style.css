@@ -39,6 +39,10 @@ button {
     font-size: 18px;
 }
 
+button:disabled {
+    background-color: #999;
+}
+
 #app {
     background-color: rgba(255,255,255,0.7);
     height: 100vh;
@@ -55,7 +59,7 @@ button {
     padding-left: 15px;
 }
 
-#submit-btn {
+#submit {
     position: absolute;
     right: 10px;
     bottom: -5px;
@@ -79,7 +83,7 @@ button {
     position: relative;
 }
 
-#guess-list {
+#guesses {
     margin-top: 100px;
 }
 
