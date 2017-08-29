@@ -96,7 +96,6 @@ $(function() {
     let titleDefault = $('#title').text();
     let subtitleDefault = $('#subtitle').text();
     let guessesDefault = $('#guesses').html();
-    console.log(game.winningNumber);
 
     $("#submit").on('click', function() {
         guessEvent()
